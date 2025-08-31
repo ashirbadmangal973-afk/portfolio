@@ -705,12 +705,24 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2024 Ashirbad Mangal. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">Built with passion for innovation and technology</p>
-        </div>
-    </footer>
+<footer class="bg-gray-900 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p>&copy; <span id="year"></span> Ashirbad Mangal. All rights reserved.</p>
+    <p class="text-gray-400 mt-2">Built with passion for innovation and technology</p>
+    <p class="text-gray-500 mt-2 text-sm">Last updated: <span id="datetime"></span></p>
+  </div>
+</footer>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    document.getElementById("year").textContent = now.getFullYear();
+    document.getElementById("datetime").textContent = now.toLocaleString();
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000); // updates every second
+</script>
+
 
     <script>
         // Auto-typing name animation
